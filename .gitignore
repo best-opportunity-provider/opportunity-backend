@@ -1,0 +1,3 @@
+.venv
+.ruff.toml
+.ruff_cache
