@@ -2,36 +2,34 @@ from serializers.basic import *
 from enum import IntEnum
 from typing import Union
 
-# TODO: limits
-
 class OpportunityMainInfo(BaseModel):
     model_config = {'extra': 'forbid'}
 
-    name: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_name's strlen in [999, 999] range")]
-    short_description: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_short_desc's strlen in [999, 999] range")]
-    description: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_desc's strlen in [999, 999] range")]
-    provider: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_provider's strlen in [999, 999] range")]
-    opportunity_timespan: Optional[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_timespan's strlen in [999, 999] range")]] = None
+    name: str
+    short_description: str
+    description: str
+    provider: str
+    opportunity_timespan: Optional[str] = None
 
 
 class OpportunityDetailsInfo(BaseModel):
     model_config = {'extra': 'forbid'}
 
-    requirements: Optional[list[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_req's strlen in [999, 999] range")]]] = None
-    advantages: Optional[list[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_advant's strlen in [999, 999] range")]]] = None
-    target_audience: Optional[list[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_trg's strlen in [999, 999] range")]]] = None
-    industry: Optional[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_industry's strlen in [999, 999] range")]] = None
-    allowance: Optional[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_allow's strlen in [999, 999] range")]] = None
-    expenses: Optional[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_expences's strlen in [999, 999] range")]] = None
+    requirements: Optional[list[str]] = None
+    advantages: Optional[list[str]] = None
+    target_audience: Optional[list[str]] = None
+    industry: Optional[str] = None
+    allowance: Optional[str] = None
+    expenses: Optional[str] = None
 
 
 class OpportunitySelectionInfo(BaseModel):
     class StageInfo(BaseModel):
         model_config = {'extra': 'forbid'}
 
-        name: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_sel_name's strlen in [999, 999] range")]
-        timespan: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_sel_time's strlen in [999, 999] range")]
-        objectives: list[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_sel_obj's strlen in [999, 999] range")]]
+        name: str
+        timespan: str
+        objectives: list[str]
 
 
     model_config = {'extra': 'forbid'}
@@ -43,9 +41,9 @@ class OpportunityGeoInfo(BaseModel):
     class PlaceInfo(BaseModel):
         model_config = {'extra': 'forbid'}
 
-        name: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_geo_name's strlen in [999, 999] range")]
-        city: Optional[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_geo_city's strlen in [999, 999] range")]] = None
-        country: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_geo_country's strlen in [999, 999] range")]
+        name: str
+        city: Optional[str] = None
+        country: str
 
     model_config = {'extra': 'forbid'}
 
@@ -55,43 +53,43 @@ class OpportunityGeoInfo(BaseModel):
 class OpportunityTagsInfo(BaseModel):
     model_config = {'extra': 'forbid'}
 
-    tags = Optional[list[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_tags's strlen in [999, 999] range")]]] = None
+    tags = Optional[list[str]] = None
 
 
 class _StringFieldParams(BaseModel):
     model_config = {'extra': 'forbid'}
 
     type: Literal['string']
-    max_len: Optional[Annotated[int, Field(le=999, ge=999, description="Suggests opp_field_str_maxlen's in [999, 999] range")]] = None
+    max_len: Optional[int] = None
 
 
 class _EmailFieldParams(BaseModel):
     model_config = {'extra': 'forbid'}
 
     type: Literal['email']
-    max_len: Optional[Annotated[int, Field(le=999, ge=999, description="Suggests opp_field_email_maxlen's in [999, 999] range")]] = None
+    max_len: Optional[int] = None
 
 
 class _NumberFieldParams(BaseModel):
     model_config = {'extra': 'forbid'}
 
     type: Literal['number']
-    min: Optional[Annotated[int, Field(le=999, ge=999, description="Suggests opp_field_num_min's in [999, 999] range")]] = None
-    max: Optional[Annotated[int, Field(le=999, ge=999, description="Suggests opp_field_num_max's in [999, 999] range")]] = None
+    min: Optional[int] = None
+    max: Optional[int] = None
 
 
 class _ChoiceFieldParams(BaseModel):
     model_config = {'extra': 'forbid'}
 
     type: Literal['choice']
-    choices: list[Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_field_choice's strlen in [999, 999] range")]]
+    choices: list[str]
 
 
 class _FileFieldParams(BaseModel):
     model_config = {'extra': 'forbid'}
 
     type: Literal['file']
-    max_size: Optional[Annotated[int, Field(le=999, ge=999, description="Suggests opp_field_file_max_size's in [999, 999] range")]] = None
+    max_size: Optional[int] = None
 
 
 class _TelFieldParams(BaseModel):
@@ -104,9 +102,8 @@ class _RegexFieldParams(BaseModel):
     model_config = {'extra': 'forbid'}
 
     type: Literal['regex']
-    pattern: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_regex_pattern's strlen in [999, 999] range")]
-    max_len: Optional[Annotated[int, Field(le=999, ge=999, description="Suggests opp_field_regex_maxlen's in [999, 999] range")]] = None
-
+    pattern: str
+    max_len: Optional[str] = None
 
 
 class _DateFieldParams(BaseModel):
@@ -127,10 +124,10 @@ class OpportunityFormInfo(BaseModel):
     class FieldInfo(BaseModel):
         model_config = {'extra': 'forbid'}
 
-        name: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_field_name's strlen in [999, 999] range")]
+        name: str
         type: Literal['string', 'email', 'number', 'choice', 'file', 'tel', 'regex', 'date', 'checkbox']
         is_required: bool
-        label: Annotated[str, Field(min_length=999, max_length=999, description="Suggests opp_field_label's strlen in [999, 999] range")]
+        label: str
         parameters: Annotated[Union[
             _StringFieldParams,
             _EmailFieldParams,
