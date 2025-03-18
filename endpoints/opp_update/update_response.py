@@ -4,19 +4,18 @@ import serializers.models as ser
 import database
 
 from ..base import app
-import submitters
-from . import prepare_yandex
-
-def fill_submit_form(form: database.OpportunityForm, data: dict[str, any]):
-    # TODO: only yandex form
-    submitters.submitter_yandex.fill_yandex_forms(prepare_yandex.make_yandex_form_card(form, data))
 
 
-@app.post('/submit')
-async def submit(response: ser.submit.response.SubmitResponse) -> JSONResponse:
+@app.post('/opp_update')
+async def opportunity_update(response: ser.opportunity.response.OpportunityUpdateResponse) -> JSONResponse:
+    pass
+
+
+"""
     form_response = database.OpportunityFormResponse.objects(id=response.response_id)
     if not form_response:
         return JSONResponse({'err': 'response_id is invalid'}, status_code=400)
     form_response = form_response[0]
     fill_submit_form(form_response.form, form_response.data.to_python())
     # TODO: checkout for user
+"""
