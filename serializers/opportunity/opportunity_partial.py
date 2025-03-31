@@ -53,7 +53,7 @@ class OpportunityGeoInfo(BaseModel):
 class OpportunityTagsInfo(BaseModel):
     model_config = {'extra': 'forbid'}
 
-    tags = Optional[list[str]] = None
+    tags: Optional[list[str]] = None
 
 
 class _StringFieldParams(BaseModel):
@@ -125,7 +125,6 @@ class OpportunityFormInfo(BaseModel):
         model_config = {'extra': 'forbid'}
 
         name: str
-        type: Literal['string', 'email', 'number', 'choice', 'file', 'tel', 'regex', 'date', 'checkbox']
         is_required: bool
         label: str
         parameters: Annotated[Union[

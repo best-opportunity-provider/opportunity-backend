@@ -2,15 +2,31 @@ from serializers.basic import *
 from enum import IntEnum
 from typing import Union
 
+from .opportunity_partial import *
+from .localization import *
+
+
+class OpportunityCreateResponse(BaseModel):
+    model_config = {'extra': 'forbid'}
+
+    opportunity_id: Union[None, ID]
+
+    main_data: OpportunityMainInfo
+    details_data: OpportunityDetailsInfo
+    selection_data: OpportunitySelectionInfo
+    geo_data: OpportunityGeoInfo
+    tags_data: OpportunityTagsInfo
+    form_data: OpportunityFormInfo
+
 
 class OpportunityUpdateResponse(BaseModel):
     model_config = {'extra': 'forbid'}
 
     opportunity_id: Union[None, ID]
 
-    main_data: dict
-    details_data: dict
-    selection_data: dict
-    geo_data: dict
-    tags_data: dict
-    form_data: dict
+    main_data: OpportunityMainInfo
+    details_data: OpportunityDetailsInfo
+    selection_data: OpportunitySelectionInfo
+    geo_data: OpportunityGeoInfo
+    tags_data: OpportunityTagsInfo
+    form_data: OpportunityFormInfo

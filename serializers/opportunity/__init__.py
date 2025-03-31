@@ -1,6 +1,7 @@
 from . import (
     response,
-    opportunity_partial
+    opportunity_partial,
+    localization
 )
 
-__all__ = ['response', 'opportunity_partial']
+__all__ = ['response', 'opportunity_partial', 'localization']

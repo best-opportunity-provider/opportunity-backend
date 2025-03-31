@@ -1,3 +1,7 @@
 .venv
 .ruff.toml
 .ruff_cache
+__pycache__
+logs
+.python-version
+test_local.py

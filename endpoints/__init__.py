@@ -1,6 +1,6 @@
 from . import (
     submit,
-    opp_update
+    opportunity_response
 )
 
-__all__ = ['submit', 'opp_update']
+__all__ = ['submit', 'opportunity_response']
