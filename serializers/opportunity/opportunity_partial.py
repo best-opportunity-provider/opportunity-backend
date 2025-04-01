@@ -9,6 +9,8 @@ class OpportunityMainInfo(BaseModel):
     short_description: str
     description: str
     provider: str
+    source_type: int
+    source_link: str
     opportunity_timespan: Optional[str] = None
 
 
