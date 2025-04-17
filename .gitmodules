@@ -1,0 +1,4 @@
+[submodule "opportunity-misc"]
+	path = opportunity-misc
+	url = https://github.com/best-opportunity-provider/opportunity-misc.git
+	branch = opportunity-transformer
