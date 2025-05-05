@@ -1,0 +1,63 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it",
+        "backend"
+    ],
+    "form": {
+        "type": {
+            "label": "Human readable name of the field translated to English",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": null
+            }
+        },
+        "parameters": {
+            "label": "Human readable name of the field translated to English",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": null
+            }
+        },
+        "confidence": {
+            "label": "Number in range (0, 1], that tells the probability of info being actually relevant to content",
+            "is_required": true,
+            "parameters": {
+                "type": "number",
+                "min": 0,
+                "max": 1
+            }
+        }
+    },
+    "general": {
+        "name": "Go-\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a \u0432 \u042f\u043d\u0434\u0435\u043a\u0441.\u0422\u043e\u0432\u0430\u0440\u044b",
+        "provider_id": null,
+        "short_description": "\u041c\u044b \u0440\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0435\u043c \u042f\u043d\u0434\u0435\u043a\u0441 \u0422\u043e\u0432\u0430\u0440\u044b \u2014 \u043a\u0430\u0431\u0438\u043d\u0435\u0442 \u0434\u043b\u044f \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0435\u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044e\u0449\u0438\u0439 \u0440\u0430\u0441\u0442\u0438\u0442\u044c \u0431\u0438\u0437\u043d\u0435\u0441 \u0437\u0430 \u0441\u0447\u0451\u0442 \u0440\u0430\u0437\u043c\u0435\u0449\u0435\u043d\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0432 \u041f\u043e\u0438\u0441\u043a\u0435."
+    },
+    "details": {
+        "requirements": [
+            "Go programming language skills",
+            "Knowledge of Java, databases, HTTP protocol, and REST principles",
+            "Understanding of basic algorithms and data structures",
+            "Ability to write clean, testable code",
+            "Ability to find and propose solutions, understand foreign code",
+            "Understanding of product development",
+            "Independence and proactivity, ability to work in a team"
+        ],
+        "benefits": [
+            "Extended medical insurance",
+            "Opportunities for growth and development",
+            "Sports facilities and corporate sports teams",
+            "Flexible working hours",
+            "Insurance for family members"
+        ],
+        "target_audiences": [
+            "Experienced developers"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}

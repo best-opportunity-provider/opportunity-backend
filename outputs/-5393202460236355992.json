@@ -1,0 +1,120 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it"
+    ],
+    "form": {
+        "answer_resume_type": {
+            "label": "Resume type",
+            "is_required": false,
+            "parameters": {
+                "type": "choice",
+                "choices": {
+                    "file": "File with resume",
+                    "link": "Link to resume"
+                }
+            }
+        },
+        "answer_resume_type_file": {
+            "label": "Upload resume",
+            "is_required": true,
+            "parameters": {
+                "type": "file",
+                "max_size_bytes": 9000000
+            }
+        },
+        "answer_param_name": {
+            "label": "Name",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": 50
+            }
+        },
+        "answer_param_surname": {
+            "label": "Surname",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": 50
+            }
+        },
+        "answer_param_phone": {
+            "label": "Phone",
+            "is_required": true,
+            "parameters": {
+                "type": "phone_number",
+                "countries_whitelist": [
+                    "RU"
+                ]
+            }
+        },
+        "answer_non_profile_email_5257": {
+            "label": "Email",
+            "is_required": true,
+            "parameters": {
+                "type": "email",
+                "max_length": 100
+            }
+        },
+        "answer_long_text_5258": {
+            "label": "Additional information",
+            "is_required": false,
+            "parameters": {
+                "type": "string",
+                "max_length": 1000
+            }
+        },
+        "answer_boolean_8565": {
+            "label": "Consider my candidacy",
+            "is_required": true,
+            "parameters": {
+                "type": "checkbox",
+                "checked_by_default": false
+            }
+        },
+        "answer_boolean_51602535": {
+            "label": "Send me information about suitable vacancies",
+            "is_required": false,
+            "parameters": {
+                "type": "checkbox",
+                "checked_by_default": false
+            }
+        },
+        "answer_boolean_51602536": {
+            "label": "Send me invitations to events and materials about development and technologies",
+            "is_required": false,
+            "parameters": {
+                "type": "checkbox",
+                "checked_by_default": false
+            }
+        }
+    },
+    "general": {
+        "name": "Art Director, Brand Designer",
+        "provider_id": 1,
+        "short_description": "Yandex Brand Team is looking for an experienced designer to work on brand communications, product launches, and marketing materials."
+    },
+    "details": {
+        "requirements": [
+            "Experience in communication design, branding, product launches, and marketing materials development",
+            "Understanding of brand communication and trends in the field",
+            "Developed graphic skills and ability to tell a story, package a message, and engage the audience",
+            "Creativity and ability to apply it in complex projects",
+            "Ability to dive into the context, specifics, and tasks of the product and marketing"
+        ],
+        "benefits": [
+            "Extended medical insurance",
+            "Opportunities for growth and development",
+            "Sports facilities and corporate sports teams"
+        ],
+        "target_audiences": [
+            "Experienced designers",
+            "Brand designers",
+            "Communication designers"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}

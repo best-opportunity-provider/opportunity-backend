@@ -1,0 +1,58 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it",
+        "backend"
+    ],
+    "form": {
+        "label": {
+            "label": "Human readable name of the field translated to English",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": 1000
+            }
+        },
+        "is_required": {
+            "label": "Flag that indicates whether the field must be filled in",
+            "is_required": true,
+            "parameters": {
+                "type": "checkbox",
+                "checked_by_default": false
+            }
+        }
+    },
+    "general": {
+        "name": "Product Leader in International Search",
+        "provider_id": 1,
+        "short_description": "We are looking for a product leader to develop and implement the strategy for International Search, a product used by millions of people daily."
+    },
+    "details": {
+        "requirements": [
+            "Managed product strategy at the level that determines industry development",
+            "Managed the launch and development of complex technological products with DAU > 1 million",
+            "Worked with AI/ML products and understood their potential for transforming search",
+            "Able to form a vision, develop a strategy, and implement it",
+            "Worked with research teams, UX research, and market analysis",
+            "Understood how complex ecosystems work and able to integrate innovative solutions",
+            "Able to generate non-standard ideas and turn them into successful products",
+            "Possessed strong leadership qualities and able to interact with cross-functional teams"
+        ],
+        "benefits": [
+            "Comprehensive medical insurance",
+            "Opportunities for growth and development",
+            "Sports and fitness programs",
+            "Flexible schedule",
+            "Housing loans",
+            "Support for children"
+        ],
+        "target_audiences": [
+            "Experienced product managers",
+            "Professionals in the field of AI and ML",
+            "Individuals with strong leadership skills"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}

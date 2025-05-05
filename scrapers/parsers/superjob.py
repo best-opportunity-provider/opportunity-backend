@@ -25,6 +25,24 @@ def run(vacancy_link: str) -> CategorizedOpportunityDump:
     
     return vacancy  
 
+def get_links(link_driver, filename) -> None:
+    try:
+        links = []
+        num_page = 1
+        while(True):
+            link_driver.get(f'https://students.superjob.ru/vakansii/?page={num_page}')
+            sleep(2)
+            elems = link_driver.find_elements(By.CLASS_NAME, "VacancySnippet_link__sF_cO")
+            if not elems:
+                break
+            with open(filename, 'a', encoding='utf-8') as f:
+                for elem in elems:
+                    f.write(f'{elem.get_attribute("href")}\n')
+            num_page += 1
+        link_driver.close()
+    except Exception as e:
+        print(f"Error in get_links_superjob: {str(e)}")
+
 # t = get_superjob_opportunity_dump('https://students.superjob.ru/stazhirovki/47102401/')
 # with open('tmp.json', 'w') as f:
 #     json.dump(t, f)

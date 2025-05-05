@@ -1,0 +1,33 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it"
+    ],
+    "form": {},
+    "general": {
+        "name": "Team Lead/Leading Manager for Business Trips",
+        "provider_id": 1,
+        "short_description": "We are looking for a strong leader for the business trips team. The candidate should be able to work in a multitasking mode, quickly adapt to changes and find the right solutions in non-standard situations."
+    },
+    "details": {
+        "requirements": [
+            "Experience in managing a team",
+            "Ability to work in a fast-paced environment",
+            "Strong organizational and time management skills",
+            "Experience with MS Office"
+        ],
+        "benefits": [
+            "Extended medical insurance",
+            "Opportunities for growth and development",
+            "Flexible working hours"
+        ],
+        "target_audiences": [
+            "Experienced managers",
+            "Travel industry professionals",
+            "Team leaders"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it"
+    ],
+    "form": null,
+    "general": {
+        "name": "\u0410\u043d\u0430\u043b\u0438\u0442\u0438\u043a-\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a \u0432 \u0441\u043b\u0443\u0436\u0431\u0443 \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u0415\u0434\u044b",
+        "provider_id": null,
+        "short_description": "\u041c\u044b, \u043a\u043e\u043c\u0430\u043d\u0434\u0430 \u0430\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0438 \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u042f\u043d\u0434\u0435\u043a\u0441 \u0415\u0434\u044b, \u043c\u0430\u043a\u0441\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0435\u043c \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u044b \u0441\u0435\u0440\u0432\u0438\u0441\u0430."
+    },
+    "details": {
+        "requirements": [
+            "Good knowledge of mathematics and statistics",
+            "Excellent knowledge of SQL and Python",
+            "Ability to learn new technologies and generate ideas",
+            "Ability to see the physical meaning behind numbers and find causes of phenomena",
+            "Ability to argue and defend own point of view"
+        ],
+        "benefits": [
+            "Extended medical insurance",
+            "Opportunities for growth and development",
+            "Sports facilities and activities",
+            "Flexible working hours",
+            "Housing loans"
+        ],
+        "target_audiences": [
+            "Analysts and developers",
+            "IT professionals",
+            "Data scientists"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}

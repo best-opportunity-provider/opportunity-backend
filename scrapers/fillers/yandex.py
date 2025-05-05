@@ -1,4 +1,4 @@
-from config import *
+from ..config import *
 
 def run(card) -> None:
     """
@@ -23,163 +23,50 @@ def run(card) -> None:
        We take it for granted that the fields in the dictionary card['form'] 
       are in the same order as the fields in the Yandex form.
     """
-    link = card['form_link']
+    link = card['link']
     driver.get(link)
     sleep(2)
 
     # Fill the 'resume' field.
-    driver.find_element(by="name", value="answer_resume_type_file").send_keys(card['form']['cv']['value'])
+    driver.find_element(By.CSS_SELECTOR, "input[type='file']").send_keys(card['values']['cv'])
+    sleep(0.5)
+    driver.find_element(By.ID, 'answer_param_name').send_keys(card['values']['firstname'])
+    sleep(0.5)
+    driver.find_element(By.ID, 'answer_param_surname').send_keys(card['values']['lastname'])
+    sleep(0.5)
+    driver.find_element(By.ID, 'answer_param_phone').send_keys(card['values']['phone'])
+    sleep(0.5)
+    driver.find_element(By.ID, 'answer_non_profile_email_5257').send_keys(card['values']['email'])
 
-    # Gather all values except 'link' and 'resume'.
-    values = []
-    for attribute in card['form']:
-        if attribute != 'link' and attribute != 'cv':
-            values.append(card['form'][attribute]['value'])
+    # # Gather all values except 'link' and 'resume'.
+    # values = []
+    # for attribute in card:
+    #     if attribute != 'link' and attribute != 'cv':
+    #         values.append(card[attribute])
 
-    pos = 0
+    # pos = 0
 
-    # Parse the page source to locate input fields.
-    dom = etree.HTML(driver.page_source)
-    tree = etree.ElementTree(dom)
+    # # Parse the page source to locate input fields.
+    # dom = etree.HTML(driver.page_source)
+    # tree = etree.ElementTree(dom)
 
-    # Fill in standard input fields.
-    form_inputs = dom.xpath('//*/span/span/input')
-    for thing in form_inputs:
-        driver.find_element(by="xpath", value=tree.getpath(thing)).send_keys(values[pos])
-        pos += 1
+    # # Fill in standard input fields.
+    # form_inputs = dom.xpath('//*/span/span/input')
+    # for thing in form_inputs:
+    #     driver.find_element(by="xpath", value=tree.getpath(thing)).send_keys(values[pos])
+    #     pos += 1
 
     # Fill in text areas.
-    form_inputs = dom.xpath('//*/textarea')
-    for thing in form_inputs:
-        driver.find_element(by="xpath", value=tree.getpath(thing)).send_keys(values[pos])
-        pos += 1
+    # form_inputs = dom.xpath('//*/textarea')
+    # for thing in form_inputs:
+    #     driver.find_element(by="xpath", value=tree.getpath(thing)).send_keys(values[pos])
+    #     pos += 1
 
     # Select checkboxes.
-    driver.find_element(by="xpath", value="/html/body/div[1]/div/main/form/div/div[10]/div/div/div[1]/label/span[1]/input").click()
-    driver.find_element(by="xpath", value="/html/body/div[1]/div/main/form/div/div[11]/div/div/div[1]/label/span[1]/input").click()
-    driver.find_element(by="xpath", value="/html/body/div[1]/div/main/form/div/div[12]/div/div/div[1]/label/span[1]/input").click()
-    driver.find_element(by="xpath", value="/html/body/div[1]/div/main/form/div/div[14]/button").click()
+    for but in driver.find_elements(By.XPATH, "//input[@type='checkbox']"):
+      if(not but.is_selected()):
+        but.click()
+    sleep(0.5)
+    driver.find_elements(By.TAG_NAME, 'button')[-1].click()
+    sleep(5)
 
-
-tr = {
-  "link": "https://yandex.ru/jobs/vacancies/menedzherstazher-po-svyazyam-s-obschestvennostyu-27231",
-  "form_link": "https://forms.yandex.ru/surveys/10029744.445a248a3887ab9ca79052d4b31d1a42cf1ad25c?publication_id=27231",
-  
-  "name": "Менеджер-стажер по связям с общественностью",
-  "short_description": "Стажировка в команде бизнес-группы Поиска и рекламных технологий.",
-  "description": "Команда бизнес-группы Поиска и рекламных технологий ищет стажёра, который усилит команду внешних коммуникаций. Вы будете помогать в решении задач блока, поддерживать ключевой продукт.",
-  
-  "provider": "Яндекс",
-  "logo": "https://yastatic.net/q/logoaas/v2/Яндекс.svg?single=1&viewBox=1",
-  
-  "requirements": [
-    "Хотите работать в B2B-коммуникациях.",
-    "Умеете просто и увлекательно рассказывать о сложном.",
-    "Готовы работать на результат и измерять его.",
-    "Готовы самостоятельно вести проекты и составлять бюджеты.",
-    "Умеете или хотите научиться работать с журналистами и лидерами мнений.",
-    "Имеете отличные коммуникативные навыки и с лёгкостью находите общий язык с разными людьми."
-  ],
-  "advantages": [
-    "Оплачиваемую стажировку сроком 3 месяца.",
-    "Полный рабочий день (40 часов в неделю).",
-    "Офисный формат работы.",
-    "Сильную команду, у которой можно многому научиться.",
-    "Компенсацию затрат на питание."
-  ],
-  "target": [
-    "Студенты и выпускники, интересующиеся карьерой в сфере коммуникаций."
-  ],
-  "discipline": [
-    "Маркетинг и коммуникации"
-  ],
-  
-  "place": [
-    "Москва"
-  ],
-  "period_of_internship": "3 месяца",
-  
-  "selection_stages": [
-    {
-      "name": "Отбор резюме",
-      "period": "1 неделя",
-      "objectives": [
-        "Проверка соответствия кандидата требованиям вакансии.",
-        "Выбор наиболее подходящих кандидатов для дальнейшего этапа."
-      ]
-    },
-    {
-      "name": "Собеседование",
-      "period": "1 неделя",
-      "objectives": [
-        "Личное знакомство с кандидатами.",
-        "Оценка коммуникативных навыков и опыт работы."
-      ]
-    },
-    {
-      "name": "Тестовое задание",
-      "period": "3 дня",
-      "objectives": [
-        "Проверка практических навыков кандидата.",
-        "Оценка способности работать под давлением."
-      ]
-    }
-  ],
-  
-  "allowance": "Оплачиваемая стажировка",
-  "expenses": "Компенсация затрат на питание",
-  
-  "additional": [
-    {
-      "title": "Возможность роста",
-      "description": "После успешного прохождения стажировки возможен переход на постоянную работу в компании."
-    },
-    {
-      "title": "Обучение",
-      "description": "Проведение мастер-классов и тренингов для развития навыков."
-    },
-    {
-      "title": "Командные мероприятия",
-      "description": "Участие в командных мероприятиях и корпоративных праздниках."
-    }
-  ],
-  
-  "tags": [
-    "Стажировка",
-    "Коммуникации",
-    "Маркетинг",
-    "Яндекс"
-  ],
-  
-  "form": {
-    "name": {
-        "type": "string",
-        "value": "Art"
-      },
-      "surename": {
-        "type": "string",
-        "value": "Zap"
-      },
-      "birthday": {
-        "type": "string",
-        "value": "12.12.2000"
-      },
-      "email": {
-        "type": "email",
-        "value": "12345678@mail.ru"
-      },
-      "phone": {
-        "type": "string",
-        "value": "+78005553535"
-      },
-      "cv": {
-        "type": "string",
-        "value": "C:\VSC\BestOpportunityProvider\cv.pdf"
-      },
-    "cover_letter": {
-      "type": "textarea",
-      "value": "Прикрепите сопроводительное письмо (необязательно)"
-    }
-  }
-}
-run(tr)

@@ -16,6 +16,24 @@ def run(vacancy_link: str) -> CategorizedOpportunityDump:
 
     return vacancy  
 
+def get_links(link_driver, filename) -> None:
+    try:
+        links = []
+        num_page = 1
+        while(True):
+            link_driver.get(f'https://ru.studyqa.com/internships/countries/cities/industries?page={num_page}')
+            sleep(2)
+            elems = link_driver.find_elements(By.CLASS_NAME, "btn btn-secondary")
+            if not elems:
+                break
+            with open(filename, 'a', encoding='utf-8') as f:
+                for elem in elems:
+                    f.write(f'{elem.get_attribute("href")}\n')
+            num_page += 1
+        link_driver.close()
+    except Exception as e:
+        print(f"Error in get_links_studyqa: {str(e)}")
+
 # t = get_studyqa_opportunity_dump('https://ru.studyqa.com/internships/view/aples-hotel-internship')
 # with open('tmp.json', 'w') as f:
 #     json.dump(t, f)

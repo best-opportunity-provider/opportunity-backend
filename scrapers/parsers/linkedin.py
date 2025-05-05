@@ -14,6 +14,12 @@ def run(vacancy_link: str) -> CategorizedOpportunityDump:
     
     return vacancy  
 
+def get_links(link_driver, filename) -> None:
+    try:
+        links = []
+    except Exception as e:
+        print(f"Error in get_links_linkedin: {str(e)}")
+
 # t = get_tbank_opportunity_dump('https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4190525465')
 # with open('tmp.json', 'w') as f:
 #     json.dump(t, f)

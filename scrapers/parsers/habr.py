@@ -30,6 +30,24 @@ def run(vacancy_link: str) -> CategorizedOpportunityDump:
                                       form_html= form_code)
     return vacancy  
 
+def get_links(link_driver, filename) -> None:
+    try:
+        links = []
+        num_page = 1
+        while(True):
+            link_driver.get(f'https://career.habr.com/vacancies?page={num_page}&type=all')
+            sleep(2)
+            elems = link_driver.find_elements(By.CLASS_NAME, "vacancy-card__title-link")
+            if not elems:
+                break
+            with open(filename, 'a', encoding='utf-8') as f:
+                for elem in elems:
+                    f.write(f'{elem.get_attribute("href")}\n')
+            num_page += 1
+        link_driver.close()
+    except Exception as e:
+        print(f"Error in get_links_habr: {str(e)}")
+
 # t = get_inter_student_opportunity_dump('https://career.habr.com/vacancies/1000127535')
 # with open('tmp.json', 'w') as f:
 #     json.dump(t, f)

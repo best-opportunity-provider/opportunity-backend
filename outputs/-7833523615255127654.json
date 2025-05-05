@@ -1,0 +1,46 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it",
+        "backend"
+    ],
+    "form": {
+        "Go-\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a \u0432 \u042f\u043d\u0434\u0435\u043a\u0441.\u0422\u043e\u0432\u0430\u0440\u044b": {
+            "label": "Go-\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a \u0432 \u042f\u043d\u0434\u0435\u043a\u0441.\u0422\u043e\u0432\u0430\u0440\u044b",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": 255
+            }
+        }
+    },
+    "general": {
+        "name": "Head of analytics group at Yandex Routing",
+        "provider_id": 1,
+        "short_description": "Yandex is looking for a head of analytics group to lead a team of analysts and develop analytical solutions for the company's logistics platform."
+    },
+    "details": {
+        "requirements": [
+            "Python",
+            "SQL",
+            "Mathematical statistics and data analysis methods",
+            "Analytical thinking",
+            "Ability to explain research results and justify decisions",
+            "Willingness to dive into details and solve problems"
+        ],
+        "benefits": [
+            "Health insurance",
+            "Opportunities for growth and development",
+            "Sports and fitness opportunities",
+            "Flexible schedule",
+            "Housing loans"
+        ],
+        "target_audiences": [
+            "Experienced professionals",
+            "Managers"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}

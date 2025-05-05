@@ -1,0 +1,36 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it",
+        "backend"
+    ],
+    "form": {},
+    "general": {
+        "name": "Developer in Telematics of Scooters and Drive",
+        "provider_id": 1,
+        "short_description": "We are looking for a developer to work on telematics for scooters and cars to make travel in the city and beyond more comfortable and faster."
+    },
+    "details": {
+        "requirements": [
+            "Experience with modern programming languages",
+            "Knowledge of classical algorithms and data structures",
+            "Backend development experience with C++"
+        ],
+        "benefits": [
+            "Extended medical insurance",
+            "Opportunities for growth and development",
+            "Sports and fitness programs"
+        ],
+        "target_audiences": [
+            "Developers with 3+ years of experience",
+            "Backend developers",
+            "C++ developers"
+        ],
+        "salary": null,
+        "expenses": [
+            "Medical insurance expenses",
+            "Sports and fitness program expenses"
+        ]
+    }
+}

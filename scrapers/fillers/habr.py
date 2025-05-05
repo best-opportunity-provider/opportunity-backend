@@ -1,8 +1,16 @@
 from config import *
 
 def fill_habr_form(card) -> None:
-  driver.get('https://account.habr.com/ru/ident/0TAKCUZlHJrEoNSIsrUrW-EtfkxmzOeZM4CeBnh5w5_n9tLP_TR0Gpn3ciqqA2HmMax_w8S6LEsAtzhat_jfGSHTsl8QD5sM6d1vzPQvaPEmKtwDaG4Li6VlJferyX1-RAmMPl7JgZ3RBQ1X7c35c21KCWqjLr_ZAip2T_Wg_qYn4z_jjD-BYtR1jZFYO2Bx9W2rSvS7wk-GAS6z')
-  sleep(60)
+  try:
+      driver.get('https://account.habr.com')
+      wait = WebDriverWait(driver, 10)
+      email = wait.until(EC.element_to_be_clickable((By.NAME, "email")))
+      email.send_keys('gauterderfork@gmail.com')
+      password = wait.until(EC.element_to_be_clickable((By.NAME, "password")))
+      password.send_keys('6zL-LGT-nEy-Pit')
+      while driver.current_url != 'https://career.habr.com/vacancies?type=all': True
+  except Exception as e:
+      print(f"An error occurred: {e}")
 
   link = card['link']
   driver.get(link)

@@ -1,0 +1,64 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "remote"
+    ],
+    "form": {
+        "name": {
+            "label": "Last name, first name, patronymic",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": null
+            }
+        },
+        "phone": {
+            "label": "Phone number",
+            "is_required": true,
+            "parameters": {
+                "type": "phone_number",
+                "countries_whitelist": null
+            }
+        },
+        "email": {
+            "label": "Email address",
+            "is_required": true,
+            "parameters": {
+                "type": "email",
+                "max_length": null
+            }
+        },
+        "resume": {
+            "label": "Resume",
+            "is_required": true,
+            "parameters": {
+                "type": "file",
+                "max_size_bytes": 15728640
+            }
+        }
+    },
+    "general": {
+        "name": "Facilitator",
+        "provider_id": null,
+        "short_description": "We are looking for a facilitator to work with customer support teams."
+    },
+    "details": {
+        "requirements": [
+            "Experience in team facilitation",
+            "Knowledge of various facilitation techniques",
+            "Understanding of group dynamics"
+        ],
+        "benefits": [
+            "Official salary from 105,000 \u20bd",
+            "Flexible working hours",
+            "Remote work or work in the office"
+        ],
+        "target_audiences": [
+            "Team leaders",
+            "Facilitators"
+        ],
+        "salary": "from 105,000 \u20bd",
+        "expenses": []
+    }
+}

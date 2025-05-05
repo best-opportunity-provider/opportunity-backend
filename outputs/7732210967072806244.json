@@ -1,0 +1,59 @@
+{
+    "tags": [
+        "job",
+        "full_time",
+        "it"
+    ],
+    "form": {
+        "name": {
+            "label": "Name",
+            "is_required": true,
+            "parameters": {
+                "type": "string",
+                "max_length": 50
+            }
+        },
+        "email": {
+            "label": "Email",
+            "is_required": true,
+            "parameters": {
+                "type": "email",
+                "max_length": 100
+            }
+        },
+        "phone": {
+            "label": "Phone Number",
+            "is_required": false,
+            "parameters": {
+                "type": "phone_number",
+                "countries_whitelist": [
+                    "RU"
+                ]
+            }
+        }
+    },
+    "general": {
+        "name": "Head of the group for working with aggregators",
+        "provider_id": 1,
+        "short_description": "Yandex Commercial Department is looking for a team leader. We expect the candidate to be well-versed in the digital market, understand the specifics of agency work, and be able to solve non-standard tasks."
+    },
+    "details": {
+        "requirements": [
+            "Managed a team for two years or more",
+            "Worked with digital agencies or on their side",
+            "Quickly learns and is able to develop",
+            "Loves and knows how to build high-quality work processes and finds a common language even with the most complex client"
+        ],
+        "benefits": [
+            "Health insurance",
+            "Opportunities for growth and development",
+            "Sports and fitness opportunities"
+        ],
+        "target_audiences": [
+            "Experienced managers",
+            "Digital agency professionals"
+        ],
+        "salary": null,
+        "expenses": []
+    }
+}
