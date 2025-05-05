@@ -25,6 +25,7 @@ def run(card) -> None:
     """
     link = card['link']
     driver.get(link)
+    wait = WebDriverWait(driver, 20)
     sleep(2)
 
     # Fill the 'resume' field.
@@ -61,12 +62,20 @@ def run(card) -> None:
     # for thing in form_inputs:
     #     driver.find_element(by="xpath", value=tree.getpath(thing)).send_keys(values[pos])
     #     pos += 1
-
+    # sleep(15)
     # Select checkboxes.
-    for but in driver.find_elements(By.XPATH, "//input[@type='checkbox']"):
-      if(not but.is_selected()):
-        but.click()
+    checkboxes = wait.until(EC.presence_of_all_elements_located(
+        (By.XPATH, "//input[@type='checkbox']")
+    ))
+    
+    for checkbox in checkboxes:
+        driver.execute_script("arguments[0].click();", checkbox)
+
     sleep(0.5)
-    driver.find_elements(By.TAG_NAME, 'button')[-1].click()
+    
+    submit_button = wait.until(EC.element_to_be_clickable(
+        (By.XPATH, "//button[@type='submit']")
+    ))
+    submit_button.click()
     sleep(5)
 
