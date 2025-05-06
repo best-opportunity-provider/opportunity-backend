@@ -22,7 +22,6 @@ def run(vacancy_link: str) -> CategorizedOpportunityDump:
 
 def get_links(link_driver, filename) -> None:
     try:
-        print('yandex')
         link_driver.get('https://yandex.ru/jobs/vacancies')
         last_elems =  link_driver.find_elements(By.CLASS_NAME, 'lc-jobs-vacancy-card__link')
         while True:
