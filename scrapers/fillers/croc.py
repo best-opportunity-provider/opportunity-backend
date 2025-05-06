@@ -2,6 +2,8 @@ from ..config import *
 
 def run(card) -> None:
   link = card['link']
+  driver = webdriver.Chrome(service=service, options=options)
+  driver.set_page_load_timeout(30)
   driver.get(link)
   WebDriverWait(driver, 10).until(
     lambda d: d.execute_script("return document.readyState") == "complete"

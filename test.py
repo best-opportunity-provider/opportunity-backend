@@ -17,10 +17,11 @@ tr = {
     }
 }
 
-driver1 = webdriver.Chrome(
-                service=service, 
-                options=options
-            )
-driver1.set_page_load_timeout(30)
-get_links(driver1, 'test.txt')
-driver1.close()
+# driver1 = webdriver.Chrome(
+#                 service=service, 
+#                 options=options
+#             )
+# driver1.set_page_load_timeout(30)
+# get_links(driver1, 'test.txt')
+# driver1.close()
+run(tr)

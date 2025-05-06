@@ -24,6 +24,8 @@ def run(card) -> None:
       are in the same order as the fields in the Yandex form.
     """
     link = card['link']
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.set_page_load_timeout(30)
     driver.get(link)
     wait = WebDriverWait(driver, 20)
     sleep(2)

@@ -1,6 +1,8 @@
 from ..config import *
 
 def run(vacancy_link: str) -> CategorizedOpportunityDump:
+    driver = webdriver.Chrome(service=service, options=options)
+    driver.set_page_load_timeout(30)
     driver.get(vacancy_link)
     sleep(5)
     html_code = BeautifulSoup(driver.page_source, "html.parser")
