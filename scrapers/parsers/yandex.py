@@ -24,15 +24,15 @@ def get_links(link_driver, filename) -> None:
     try:
         print('yandex')
         link_driver.get('https://yandex.ru/jobs/vacancies')
-        last_height = link_driver.execute_script("return document.body.scrollHeight")
+        last_elems =  link_driver.find_elements(By.CLASS_NAME, 'lc-jobs-vacancy-card__link')
         while True:
             link_driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             sleep(1)
-            now_height = link_driver.execute_script("return document.body.scrollHeight")
-            if now_height >= 1900000 or abs(last_height - now_height) <= 100:
+            now_elems = link_driver.find_elements(By.CLASS_NAME, 'lc-jobs-vacancy-card__link')
+            if now_elems[-1].get_attribute("href") == last_elems[-1].get_attribute("href"):
                 break
-            last_height = now_height
-        elems = link_driver.find_elements(By.CLASS_NAME, 'lc-jobs-vacancy-card__link')
+            last_elems = now_elems
+        elems = last_elems
         with open(filename, 'a', encoding='utf-8') as f:
             for elem in elems:
                 f.write(f'{elem.get_attribute("href")}\n')
