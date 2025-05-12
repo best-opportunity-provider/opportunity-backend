@@ -12,7 +12,8 @@ def run(card) -> None:
   sleep(1)
   driver.find_element(By.XPATH, '//*[@id="form_text_1"]').send_keys(card['values']['firstname'] + ' ' + card['values']['lastname'])
   driver.find_element(By.XPATH, '//*[@id="form_text_2"]').send_keys(card['values']['email'])
-  driver.find_element(By.XPATH, '//*[@id="form_text_3"]').send_keys(card['values']['phone'])
+  phone = card['values']['phone'][1:] if card['values']['phone'][0] == '8' else card['values']['phone'][2:]
+  driver.find_element(By.XPATH, '//*[@id="form_text_3"]').send_keys(phone)
   driver.find_element(By.CSS_SELECTOR, "input[type='file']").send_keys(card['values']['cv'])
   driver.find_element(By.XPATH, '//*[@id="responseForm"]/div/form/div[11]/div/div/label').click()
   sleep(1)

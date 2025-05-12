@@ -22,6 +22,7 @@ def run(vacancy_link: str) -> CategorizedOpportunityDump:
 
     return vacancy
 
+# 685 Kb operational memory for one opportunity
 def get_links(link_driver, filename) -> None:
     try:
         link_driver.get('https://yandex.ru/jobs/vacancies')

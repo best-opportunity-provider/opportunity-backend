@@ -30,7 +30,6 @@ def run(card) -> None:
     wait = WebDriverWait(driver, 20)
     sleep(2)
 
-    # Fill the 'resume' field.
     driver.find_element(By.CSS_SELECTOR, "input[type='file']").send_keys(card['values']['cv'])
     sleep(0.5)
     driver.find_element(By.ID, 'answer_param_name').send_keys(card['values']['firstname'])
@@ -64,7 +63,7 @@ def run(card) -> None:
     # for thing in form_inputs:
     #     driver.find_element(by="xpath", value=tree.getpath(thing)).send_keys(values[pos])
     #     pos += 1
-    # sleep(15)
+
     # Select checkboxes.
     checkboxes = wait.until(EC.presence_of_all_elements_located(
         (By.XPATH, "//input[@type='checkbox']")
@@ -75,6 +74,7 @@ def run(card) -> None:
 
     sleep(0.5)
     
+    # Submit form
     submit_button = wait.until(EC.element_to_be_clickable(
         (By.XPATH, "//button[@type='submit']")
     ))
