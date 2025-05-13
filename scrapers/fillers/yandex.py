@@ -72,7 +72,8 @@ def run(card) -> None:
     for checkbox in checkboxes:
         driver.execute_script("arguments[0].click();", checkbox)
 
-    sleep(0.5)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    sleep(1)
     
     # Submit form
     submit_button = wait.until(EC.element_to_be_clickable(
